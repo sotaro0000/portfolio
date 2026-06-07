@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>佐藤 颯太郎 | AIエンジニア・マーケター ポートフォリオ</title>
+  <meta name="description" content="AIエンジニア兼マーケター 佐藤颯太郎のポートフォリオ。LLM/RAGを活用したアプリケーション開発と、AIを用いたマーケティング施策の実績を掲載しています。" />
+  <meta name="author" content="佐藤 颯太郎" />
+  <meta property="og:title" content="佐藤 颯太郎 | AIエンジニア・マーケター ポートフォリオ" />
+  <meta property="og:description" content="LLM/RAGアプリ開発とAIマーケティングの実績ポートフォリオ。" />
+  <meta property="og:type" content="website" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#eef6ff', 100: '#d9eaff', 200: '#bcdcff', 400: '#59a5ff', 500: '#3380fc', 600: '#1d60f1', 700: '#164bdd', 800: '#193eb3', 900: '#1a388d' },
+            ink: '#0f172a'
+          },
+          fontFamily: { sans: ['system-ui', '-apple-system', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* スクロール連動の段階的フェードイン（arutega：心地よいインタラクション） */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s cubic-bezier(.16, 1, .3, 1), transform .7s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .grid-bg {
+      background-image: radial-gradient(rgba(29, 96, 241, .08) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    /* ヒーローのグラデーション文字 */
+    .gradient-text {
+      background: linear-gradient(100deg, #1d60f1, #59a5ff 60%, #1a388d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* カードのホバーリフト */
+    .lift {
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px -18px rgba(29, 96, 241, .35);
+    }
+
+    /* ブラウザ風モックアップ */
+    .browser-bar::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #f87171;
+      box-shadow: 16px 0 #fbbf24, 32px 0 #34d399;
+    }
+
+    /* 浮遊アニメーション */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .delay-100 {
+      transition-delay: .1s
+    }
+
+    .delay-200 {
+      transition-delay: .2s
+    }
+
+    .delay-300 {
+      transition-delay: .3s
+    }
+
+    .delay-400 {
+      transition-delay: .4s
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+  <!-- ===== Nav ===== -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
+      <a href="#top" class="font-bold tracking-tight text-slate-900">S<span class="text-brand-600">.</span>Sato</a>
+      <div class="hidden gap-6 text-sm text-slate-600 sm:flex">
+        <a href="#about" class="transition hover:text-brand-600">About</a>
+        <a href="#strengths" class="transition hover:text-brand-600">Strengths</a>
+        <a href="#skills" class="transition hover:text-brand-600">Skills</a>
+        <a href="#projects" class="transition hover:text-brand-600">Projects</a>
+        <a href="#writing" class="transition hover:text-brand-600">Writing</a>
+        <a href="#career" class="transition hover:text-brand-600">Career</a>
+      </div>
+      <a href="#contact"
+        class="rounded-full bg-brand-600 px-4 py-1.5 text-sm font-medium text-white transition hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/30">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="top" class="grid-bg">
+    <div class="mx-auto max-w-5xl px-5 py-20 sm:py-28">
+      <div class="reveal">
+        <p
+          class="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-brand-500"></span>
+          AI Engineer × Marketer ／ 個人事業主
+        </p>
+        <h1 class="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+          AIで「課題発見」から<br class="hidden sm:block" />
+          「実装・成果」までを<span class="gradient-text">一気通貫</span>で。
+        </h1>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-600">
+          佐藤 颯太郎（Sotaro Sato）。組み込み・Webシステム開発を起点に、現在は <strong class="text-slate-800">LLM / RAG を活用したアプリケーション開発</strong>と、
+          <strong class="text-slate-800">AIを用いたマーケティング施策（SEO / AIO）</strong>の双方を手がけています。
+          ビジネス課題の要件定義からフルスタック実装、運用・改善までを横断的にリードします。
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#projects"
+            class="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/30">制作物を見る</a>
+          <a href="#contact"
+            class="rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-brand-400 hover:text-brand-600">お仕事のご相談</a>
+        </div>
+        <dl class="mt-12 grid max-w-2xl grid-cols-3 gap-4 border-t border-slate-200 pt-6 text-center">
+          <div>
+            <dt class="text-2xl font-bold text-slate-900">3+</dt>
+            <dd class="text-xs text-slate-500">領域横断<br>(組込/Web/AI)</dd>
+          </div>
+          <div>
+            <dt class="text-2xl font-bold text-slate-900">RAG</dt>
+            <dd class="text-xs text-slate-500">本番リリース<br>実績あり</dd>
+          </div>
+          <div>
+            <dt class="text-2xl font-bold text-slate-900">AI×Mkt</dt>
+            <dd class="text-xs text-slate-500">エンジニアと<br>マーケの両輪</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-5xl px-5 py-16">
+      <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600">About</h2>
+      <h3 class="reveal mb-8 text-2xl font-bold text-slate-900">自己紹介</h3>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="reveal md:col-span-2 space-y-4 text-sm leading-relaxed text-slate-600">
+          <p>
+            大学で機械・精密システム工学を学んだのち、防衛関連機器の組み込み設計（C言語）からキャリアをスタート。
+            その後 Web システム開発へ転じ、社内システムの要件定義〜開発をチームリーダーとして担当しました。
+          </p>
+          <p>
+            現在の主軸は <strong class="text-slate-800">生成AI</strong>です。設計書からテスト打鍵表を生成する業務の RAG 自動化や、
+            社内ナレッジ参照のための RAG プラットフォーム構築（プロジェクトリーダー）など、
+            <strong class="text-slate-800">LLM をプロダクションで動かす</strong>経験を積んできました。
+          </p>
+          <p>
+            並行して、AIを活用したマーケター（SEO / AIO・MAツール運用・データ分析）としても活動。
+            <strong class="text-slate-800">「技術で作れる」だけでなく「ビジネス成果につなげる」</strong>ことを一貫して重視しています。
+          </p>
+        </div>
+        <div class="reveal delay-100 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm lift">
+          <h4 class="mb-3 font-semibold text-slate-800">Profile</h4>
+          <ul class="space-y-2 text-slate-600">
+            <li class="flex justify-between gap-2"><span class="text-slate-400">氏名</span><span>佐藤 颯太郎</span></li>
+            <li class="flex justify-between gap-2"><span class="text-slate-400">職種</span><span>AIエンジニア / マーケター</span>
+            </li>
+            <li class="flex justify-between gap-2"><span class="text-slate-400">形態</span><span>個人事業主</span></li>
+            <li class="flex justify-between gap-2"><span class="text-slate-400">学歴</span><span>帝京大学 理工学部</span></li>
+          </ul>
+          <h4 class="mb-2 mt-4 font-semibold text-slate-800">資格</h4>
+          <ul class="space-y-1 text-slate-600">
+            <li>・G検定</li>
+            <li>・DeepLearning.AI TensorFlow Developer Professional</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Strengths（個性・人柄の表現：arutega） ===== -->
+  <section id="strengths" class="border-t border-slate-200">
+    <div class="mx-auto max-w-5xl px-5 py-16">
+      <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600">Strengths</h2>
+      <h3 class="reveal mb-8 text-2xl font-bold text-slate-900">大切にしている3つのこと</h3>
+      <div class="grid gap-5 md:grid-cols-3">
+        <div class="reveal rounded-xl border border-slate-200 bg-white p-6 lift">
+          <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-50">
+            <svg class="h-6 w-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg>
+          </div>
+          <h4 class="mb-2 font-bold text-slate-800">課題ドリブン</h4>
+          <p class="text-sm leading-relaxed text-slate-600">データ分析で課題を発見し、技術で解決まで導く。「作ること」より「成果が出ること」を起点に設計します。</p>
+        </div>
+        <div class="reveal delay-100 rounded-xl border border-slate-200 bg-white p-6 lift">
+          <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-50">
+            <svg class="h-6 w-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 10.9 15.7 7.1M8.3 13.1l7.4 3.8"/></svg>
+          </div>
+          <h4 class="mb-2 font-bold text-slate-800">細やかな情報連携</h4>
+          <p class="text-sm leading-relaxed text-slate-600">進捗や変更を迅速・詳細に共有し、チーム全員が同じ視界で進められる状態をつくる。タスク分解で抜け漏れを防ぎます。</p>
+        </div>
+        <div class="reveal delay-200 rounded-xl border border-slate-200 bg-white p-6 lift">
+          <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-50">
+            <svg class="h-6 w-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.3 5.2 7.7 4.7 5 4.7c-.7 0-1.3 0-2 .2v13c.7-.2 1.3-.2 2-.2 2.7 0 5.3.5 7 1.8 1.7-1.3 4.3-1.8 7-1.8.7 0 1.3 0 2 .2v-13c-.7-.2-1.3-.2-2-.2-2.7 0-5.3.5-7 1.8z"/><path d="M12 6.5v13"/></svg>
+          </div>
+          <h4 class="mb-2 font-bold text-slate-800">学び続ける</h4>
+          <p class="text-sm leading-relaxed text-slate-600">セミナー・ハッカソン参加や資格取得で最新技術を追い、作ったものを技術記事として発信して定着させています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-5xl px-5 py-16">
+      <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600">Skills</h2>
+      <h3 class="reveal mb-8 text-2xl font-bold text-slate-900">スキルセット</h3>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal rounded-xl border border-slate-200 bg-slate-50 p-5 lift">
+          <h4 class="mb-3 font-semibold text-slate-800">AI / LLM</h4>
+          <ul class="space-y-1.5 text-sm text-slate-600">
+            <li>RAG（検索拡張生成）</li>
+            <li>LangChain / LlamaIndex</li>
+            <li>OpenAI / Anthropic API</li>
+            <li>Dify / プロンプト設計</li>
+            <li>Vector DB（Pinecone 等）</li>
+          </ul>
+        </div>
+        <div class="reveal delay-100 rounded-xl border border-slate-200 bg-slate-50 p-5 lift">
+          <h4 class="mb-3 font-semibold text-slate-800">Backend</h4>
+          <ul class="space-y-1.5 text-sm text-slate-600">
+            <li>Python / FastAPI</li>
+            <li>Node.js (Route Handlers)</li>
+            <li>PostgreSQL / MySQL</li>
+            <li>REST API 設計</li>
+            <li>C（組み込み）</li>
+          </ul>
+        </div>
+        <div class="reveal delay-200 rounded-xl border border-slate-200 bg-slate-50 p-5 lift">
+          <h4 class="mb-3 font-semibold text-slate-800">Frontend</h4>
+          <ul class="space-y-1.5 text-sm text-slate-600">
+            <li>TypeScript / JavaScript</li>
+            <li>Next.js / React</li>
+            <li>Tailwind CSS</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+        <div class="reveal delay-300 rounded-xl border border-slate-200 bg-slate-50 p-5 lift">
+          <h4 class="mb-3 font-semibold text-slate-800">Infra / Marketing</h4>
+          <ul class="space-y-1.5 text-sm text-slate-600">
+            <li>Vercel / AWS / Linux</li>
+            <li>GitHub Actions (CI/CD)</li>
+            <li>SEO / AIO（AI最適化）</li>
+            <li>MAツール / データ分析</li>
+          </ul>
+        </div>
+      </div>
+      <p class="reveal mt-4 text-xs text-slate-400">※ 実務・個人開発で利用した主な技術。年数の詳細は職務経歴書をご参照ください。</p>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="border-t border-slate-200">
+    <div class="mx-auto max-w-5xl px-5 py-16">
+      <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600">Projects</h2>
+      <h3 class="reveal mb-2 text-2xl font-bold text-slate-900">制作物・プロジェクト</h3>
+      <p class="reveal mb-10 text-sm text-slate-500">各プロジェクトを「課題 → アプローチ → 成果」の流れで記載しています。</p>
+
+      <!-- Project 1: AIO Lens (個人開発・主役) -->
+      <article class="reveal mb-10 overflow-hidden rounded-2xl border border-brand-200 shadow-sm">
+        <div
+          class="flex flex-col gap-1 bg-gradient-to-br from-brand-600 to-brand-800 p-6 text-white sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <span class="rounded-full bg-white/20 px-2 py-0.5 text-xs font-medium">個人開発 ・ Featured</span>
+            <h4 class="mt-2 text-2xl font-bold">AIO Lens</h4>
+            <p class="text-sm text-brand-100">生成AI時代のWeb可視性診断ツール</p>
+          </div>
+          <div class="mt-4 flex gap-2 sm:mt-0">
+            <a href="#" data-link="demo"
+              class="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-50">デモを開く
+              ↗</a>
+            <a href="#" data-link="repo"
+              class="rounded-lg border border-white/40 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10">GitHub
+              ↗</a>
+          </div>
+        </div>
+
+        <!-- スクリーンショット（ブラウザ風モックアップ） -->
+        <div class="border-b border-slate-100 bg-slate-100 p-4 sm:p-8">
+          <div class="mx-auto max-w-3xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
+            <div class="browser-bar flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-2.5">
+              <span class="ml-auto rounded bg-white px-3 py-0.5 text-[10px] text-slate-400">aio-lens.vercel.app</span>
+            </div>
+            <img src="aio-lens-summary.png" alt="AIO Lens のスコア診断ダッシュボード画面" class="block w-full"
+              onerror="this.parentNode.parentNode.innerHTML='<div class=&quot;flex aspect-video items-center justify-center text-xs text-slate-400&quot;>スクリーンショット（aio-lens-summary.png）をこのフォルダに保存すると表示されます</div>';" />
+          </div>
+        </div>
+
+        <div class="grid gap-6 p-6 md:grid-cols-2">
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <p class="font-semibold text-red-600">課題</p>
+              <p class="text-slate-600">検索の主役が「リンク一覧」から「生成AIの回答」へ移行する中、SEO の次の論点として
+                AIO（AI最適化）が台頭。しかし「自社・顧客ページが“AIから見て”引用されやすいか」を定量把握する手段がなかった。</p>
+            </div>
+            <div>
+              <p class="font-semibold text-amber-600">アプローチ</p>
+              <p class="text-slate-600">URL を解析し、AIへの引用されやすさを <strong>6 軸・45+項目</strong>でスコア化。<strong>ルールベース診断を土台に LLM
+                  を“強化レイヤー”として組み合わせるハイブリッド設計</strong>を採用し、APIキー未設定・LLM障害時もグレースフルに縮退する構成とした。SSRF対策・プロバイダ非依存のLLM抽象化も実装。
+              </p>
+            </div>
+            <div>
+              <p class="font-semibold text-green-600">成果 / 工夫</p>
+              <p class="text-slate-600">企画・設計・実装・公開（Vercel）まで個人で一貫対応。AIエンジニアリングとマーケティング双方の知見を融合した、差別化された実用ツールとして公開中。</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase text-slate-400">Tech Stack</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Next.js 16</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">TypeScript</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">React 19</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Tailwind CSS</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">cheerio</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">OpenAI / Anthropic</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Vercel</span>
+              </div>
+            </div>
+            <ul class="space-y-1.5 text-xs text-slate-500">
+              <li>・役割：企画・要件定義・設計・実装・公開（個人）</li>
+              <li>・診断軸：構造化データ／引用性／構造／E-E-A-T／メタ／クローラビリティ</li>
+              <li>・READMEに設計思想・アーキテクチャ図を記載</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Tech Doc Assistant（個人開発・フルスタックRAG） -->
+      <article class="reveal mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">個人開発</span>
+          <span class="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700">フルスタック / RAG</span>
+          <span class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">公開中</span>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900">Tech Doc Assistant — AIドキュメント管理システム</h4>
+        <p class="mt-1 text-sm text-slate-500">技術ドキュメントを AI で管理・検索できるフルスタック Web アプリケーション</p>
+
+        <!-- スクリーンショット（ブラウザ風モックアップ） -->
+        <div class="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+          <div class="browser-bar flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-2.5">
+            <span class="ml-auto rounded bg-white px-3 py-0.5 text-[10px] text-slate-400">tech-doc-assistant.vercel.app</span>
+          </div>
+          <img src="tech-doc-assistant.png" alt="Tech Doc Assistant のランディング画面（機能一覧と技術スタック）"
+            class="block w-full"
+            onerror="this.closest('div').parentNode.removeChild(this.closest('div'));" />
+        </div>
+
+        <div class="mt-5 grid gap-6 md:grid-cols-2">
+          <div class="space-y-3 text-sm leading-relaxed">
+            <p><span class="font-semibold text-red-600">課題：</span><span class="text-slate-600">新規プロジェクト配属に向け、実務で使う技術スタックを「動くプロダクト」を通じて網羅的に習得する必要があった。</span></p>
+            <p><span class="font-semibold text-amber-600">アプローチ：</span><span class="text-slate-600">技術ドキュメントを AI で管理・検索できるフルスタックアプリを設計。<strong>GPT-4 + ベクトルDB(Pinecone) による RAG</strong> で自然言語検索・質問応答を実装し、Notion連携・CSV/Excel のデータ分析・外部DB(PostgreSQL/Oracle/SQL Server)接続・GitHub OAuth 認証まで搭載。Docker + GitHub Actions で CI/CD を整備。</span></p>
+            <p><span class="font-semibold text-green-600">成果：</span><span class="text-slate-600">フロント(Next.js 14)〜バックエンド(FastAPI)〜RAG基盤〜インフラ(Docker/CI/CD)まで<strong>一人で一気通貫</strong>に構築・公開。実務想定の技術スタックを横断的に習得した。</span></p>
+            <p class="text-xs text-slate-400">役割：企画・設計・実装・公開（個人）／ デプロイ：Vercel・Azure / AWS 構成</p>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase text-slate-400">主な機能</p>
+              <ul class="space-y-1 text-xs text-slate-600">
+                <li>・Markdown ドキュメントの作成・管理</li>
+                <li>・RAG による AI 検索・質問応答（GPT-4）</li>
+                <li>・Notion ページの Markdown インポート</li>
+                <li>・CSV / Excel のアップロードと自動データ分析</li>
+                <li>・外部 DB 接続とクエリ実行</li>
+                <li>・GitHub OAuth 認証</li>
+              </ul>
+            </div>
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase text-slate-400">Tech Stack</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Next.js 14</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">TypeScript</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Tailwind / shadcn/ui</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">FastAPI</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">GPT-4 / Pinecone</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">pandas / Plotly</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">PostgreSQL</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Docker</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">GitHub Actions</span>
+              </div>
+            </div>
+            <a href="https://tech-doc-assistant.vercel.app" target="_blank" rel="noopener"
+              class="inline-block text-sm font-semibold text-brand-600 hover:underline">サイトを開く ↗（閲覧には GitHub ログインが必要）</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: 社内RAG（業務・チーム開発） -->
+      <article class="reveal mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">チーム開発（PL）</span>
+          <span class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">本番リリース済み</span>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900">AIを活用した社内業務効率化プラットフォーム（RAGシステム）</h4>
+        <div class="mt-4 grid gap-6 md:grid-cols-3">
+          <div class="md:col-span-2 space-y-3 text-sm leading-relaxed">
+            <p><span class="font-semibold text-red-600">課題：</span><span
+                class="text-slate-600">社内固有のドキュメント検索や定型文作成が属人的で工数大、ヒューマンエラーも発生していた。</span></p>
+            <p><span class="font-semibold text-amber-600">アプローチ：</span><span
+                class="text-slate-600">市場調査・ユーザーインタビューで真に必要な機能を特定し、社内ナレッジを安全に参照できる LLM ベースの RAG
+                システムを企画・構築。LLMへの送信前に個人情報をマスキングする前処理層、OAuth2.0/JWT 認証、CI/CD、コスト監視基盤まで整備。</span></p>
+            <p><span class="font-semibold text-green-600">成果：</span><span
+                class="text-slate-600">対象部署の業務効率を<strong>20%向上</strong>、開発全体の納期を<strong>50%短縮</strong>、<strong>30%のコスト削減</strong>を実現。</span>
+            </p>
+            <p class="text-xs text-slate-400">
+              役割：プロジェクトリーダー兼AIフルスタックエンジニア（要員4名・約6ヶ月）。要件定義〜LLM技術選定〜バックエンドAPI〜RAGパイプライン〜進行管理を横断リード。</p>
+          </div>
+          <div>
+            <p class="mb-2 text-xs font-semibold uppercase text-slate-400">Tech Stack</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">React</span>
+              <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">FastAPI</span>
+              <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">LangChain</span>
+              <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Pinecone</span>
+              <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">PostgreSQL</span>
+              <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">AWS ECS</span>
+              <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">GitHub Actions</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: 業務（AI/マーケ） -->
+      <article class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
+        <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">業務（AI / マーケ）</span>
+        <h4 class="mt-2 text-lg font-bold text-slate-900">設計書→打鍵表のAI自動化 ＆ AIマーケ施策</h4>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">
+          設計書からテスト打鍵表の生成を RAG で自動化（非構造データを JSON/Markdown へ正規化）。
+          並行して、AIO による AI 概要欄反映を狙った Web サイト制作・運用、MAツールの AI 強化（UI/UX最適化）を担当。
+        </p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">RAG</span>
+          <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">LangChain</span>
+          <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Dify</span>
+          <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">SEO / AIO</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Writing / 発信（arutega：情報発信） ===== -->
+  <section id="writing" class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-5xl px-5 py-16">
+      <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600">Writing</h2>
+      <h3 class="reveal mb-2 text-2xl font-bold text-slate-900">発信・アウトプット</h3>
+      <p class="reveal mb-8 text-sm text-slate-500">学んだ技術や作った成果物を、技術記事として発信し知見を定着させています。</p>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <a href="#" data-link="repo" class="reveal rounded-xl border border-slate-200 p-5 lift">
+          <p class="text-xs font-semibold text-brand-600">GitHub</p>
+          <p class="mt-1 font-semibold text-slate-800">ソースコード公開</p>
+          <p class="mt-1 text-xs text-slate-500">AIO Lens など個人開発のコードを README 付きで公開。</p>
+        </a>
+        <a href="https://tech-doc-assistant.vercel.app" target="_blank" rel="noopener"
+          class="reveal delay-100 rounded-xl border border-slate-200 p-5 lift">
+          <p class="text-xs font-semibold text-brand-600">個人開発サイト</p>
+          <p class="mt-1 font-semibold text-slate-800">Tech Doc Assistant</p>
+          <p class="mt-1 text-xs text-slate-500">作った Web アプリを公開・運用。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Career ===== -->
+  <section id="career" class="border-t border-slate-200">
+    <div class="mx-auto max-w-5xl px-5 py-16">
+      <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600">Career</h2>
+      <h3 class="reveal mb-8 text-2xl font-bold text-slate-900">経歴</h3>
+      <ol class="relative border-l border-slate-300 pl-6">
+        <li class="reveal mb-8">
+          <span class="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-brand-600"></span>
+          <p class="text-xs text-slate-400">2026.05 – 現在</p>
+          <p class="font-semibold text-slate-800">リブランディング株式会社（業務委託） ／ AIプランナー・開発・運用</p>
+          <p class="text-sm text-slate-600">AIを活用した Web サイト制作・口コミ施策、データ分析と予測モデル構築、MAツールの AI 強化。</p>
+        </li>
+        <li class="reveal mb-8">
+          <span class="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-brand-600"></span>
+          <p class="text-xs text-slate-400">2025.10 – 2026.04</p>
+          <p class="font-semibold text-slate-800">株式会社FERNET ／ Web・AIエンジニア</p>
+          <p class="text-sm text-slate-600">社内システム改修（チームリーダー）、設計書→打鍵表生成の AI 自動化（RAG）。</p>
+        </li>
+        <li class="reveal mb-8">
+          <span class="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-slate-400"></span>
+          <p class="text-xs text-slate-400">2024.04 – 2025.03</p>
+          <p class="font-semibold text-slate-800">日本アビオニクス株式会社 ／ 組み込みエンジニア</p>
+          <p class="text-sm text-slate-600">輸送機搭載無線機の改修設計（基本・詳細設計、C言語）。</p>
+        </li>
+        <li class="reveal">
+          <span class="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-slate-400"></span>
+          <p class="text-xs text-slate-400">2024.03</p>
+          <p class="font-semibold text-slate-800">帝京大学 理工学部 機械・精密システム工学科 卒業</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Contact（コンバージョン意識：arutega） ===== -->
+  <section id="contact" class="border-t border-slate-200 bg-ink text-white">
+    <div class="mx-auto max-w-5xl px-5 py-20 text-center">
+      <span
+        class="reveal mb-5 inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-400/10 px-3 py-1 text-xs font-medium text-green-300">
+        <span class="h-2 w-2 animate-pulse rounded-full bg-green-400"></span>
+        現在、業務委託のご相談を受付中です
+      </span>
+      <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-400">Contact</h2>
+      <h3 class="reveal mb-4 text-3xl font-bold">一緒に、AIで成果をつくりませんか？</h3>
+      <p class="reveal mx-auto mb-8 max-w-xl text-sm leading-relaxed text-slate-300">
+        AI を活用したアプリ開発・PoC、RAG システム構築、AIマーケティング施策など、お仕事のご相談を承っています。
+        まずはお気軽にメッセージください。
+      </p>
+      <div class="reveal flex flex-wrap justify-center gap-3">
+        <a href="mailto:sotaro.gt@gmail.com"
+          class="inline-flex items-center gap-2 rounded-lg bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/40">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          sotaro.gt@gmail.com
+        </a>
+        <a href="#" data-link="repo"
+          class="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+          GitHub を見る ↗
+        </a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-slate-500">
+      © 2026 Sotaro Sato. Built with HTML &amp; Tailwind CSS.
+    </div>
+  </section>
+
+  <script>
+    // スクロールで要素を段階的にフェードイン
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // デプロイ URL / GitHub URL を一箇所で管理（data-link 属性に自動反映）
+    const LINKS = {
+      demo: 'https://aio-lens.vercel.app',
+      repo: 'https://github.com/sotaro0000/aio-lens'
+    };
+    document.querySelectorAll('[data-link]').forEach((a) => {
+      const url = LINKS[a.getAttribute('data-link')];
+      if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
+    });
+  </script>
+</body>
+
+</html>
