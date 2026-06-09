@@ -368,6 +368,63 @@
         </div>
       </article>
 
+      <!-- Project: Diagram Studio（個人開発・ノーコード図解ツール） -->
+      <article class="reveal mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">個人開発</span>
+          <span class="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700">ノーコード図解 / 自動生成</span>
+          <span class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">公開中</span>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900">Diagram Studio — 図解スライド自動生成ツール</h4>
+        <p class="mt-1 text-sm text-slate-500">質問に答える・録音の文字起こしから、プロ品質の図解スライドを自動生成</p>
+
+        <!-- スクリーンショット（ブラウザ風モックアップ） -->
+        <div class="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+          <div class="browser-bar flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-2.5">
+            <span class="ml-auto rounded bg-white px-3 py-0.5 text-[10px] text-slate-400">growth-arch-app.pages.dev</span>
+          </div>
+          <img src="diagram-studio.png" alt="Diagram Studio のトップ画面（質問・録音からスライド資料を自動生成）"
+            class="block w-full"
+            onerror="this.closest('div').parentNode.removeChild(this.closest('div'));" />
+        </div>
+
+        <div class="mt-5 grid gap-6 md:grid-cols-2">
+          <div class="space-y-3 text-sm leading-relaxed">
+            <p><span class="font-semibold text-red-600">課題：</span><span class="text-slate-600">議事録・面談メモを資料化するのは手間がかかる。PowerPoint が無い人やデザインに不慣れな人でも、短時間で“伝わる”図解スライドを作りたい。</span></p>
+            <p><span class="font-semibold text-amber-600">アプローチ：</span><span class="text-slate-600">「質問に順番に答える／録音の文字起こしを取り込む」だけで、内容に最適なレイアウト（フロー・比較・2×2・ピラミッド・タイムライン等）を<strong>自動選択して構成</strong>。重要文抽出・重複圧縮・話者ラベル除去を<strong>ブラウザ内のローカル処理で実装し、APIキー無しでも完結</strong>。Anthropic API（任意）でさらに高品質化も可能。出力は<strong>スライド形式(.pptx)と PNG</strong>で、PowerPoint・Google スライド両対応。</span></p>
+            <p><span class="font-semibold text-green-600">成果：</span><span class="text-slate-600">企画〜実装〜公開まで個人で一貫。<strong>登録不要・無料・AI 任意</strong>の単一ファイル静的アプリとして公開。Cloudflare Pages で配信し、Docker/Caddy による社内配信構成も用意。主要フローは Playwright で E2E 検証。</span></p>
+            <p class="text-xs text-slate-400">役割：企画・UI/UX・実装・公開（個人）／ 配信：Cloudflare Pages・Docker(Caddy)</p>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase text-slate-400">主な機能</p>
+              <ul class="space-y-1 text-xs text-slate-600">
+                <li>・質問に答えるだけの全画面ウィザード（診断形式）</li>
+                <li>・録音/文字起こし → 要点を自動整理（AI 不要）</li>
+                <li>・用途別テンプレート 13 種（サムネイル付き）</li>
+                <li>・スライド形式(.pptx) / PNG 出力（PowerPoint・Google スライド対応）</li>
+                <li>・音声/動画はブラウザ内 Whisper で文字起こし</li>
+              </ul>
+            </div>
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase text-slate-400">Tech Stack</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">JavaScript（単一ファイル）</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">PptxGenJS</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">html-to-image</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Transformers.js (Whisper)</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Anthropic API（任意）</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Cloudflare Pages</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Docker / Caddy</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Playwright</span>
+              </div>
+            </div>
+            <a href="https://growth-arch-app.pages.dev/" target="_blank" rel="noopener"
+              class="inline-block text-sm font-semibold text-brand-600 hover:underline">サイトを開く ↗（登録不要・無料）</a>
+          </div>
+        </div>
+      </article>
+
       <!-- Project 2: Tech Doc Assistant（個人開発・フルスタックRAG） -->
       <article class="reveal mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
         <div class="mb-4 flex flex-wrap items-center gap-2">
