@@ -24,7 +24,7 @@
             surface: "#ffffff",  // カード面
             line: "#e7e3db",     // ヘアライン罫線
             muted: "#6b6660",    // 補助テキスト
-            accent: "#9a3412",   // テラコッタ（差し色：最小限）
+            accent: "#2563eb",   // ブランド差し色＝ブルー
           },
           fontFamily: {
             display: ['Manrope', '"Zen Kaku Gothic New"', 'system-ui', 'sans-serif'],
@@ -49,7 +49,7 @@
       --paper: #f7f6f3;
       --line: #e7e3db;
       --muted: #6b6660;
-      --accent: #9a3412;
+      --accent: #2563eb;
     }
 
     html { scroll-behavior: smooth; }
@@ -164,7 +164,7 @@
 
       <div class="flex items-center gap-2">
         <a href="#contact"
-          class="hidden rounded-md bg-ink px-4 py-2 text-sm font-semibold text-paper transition hover:bg-stone-700 sm:inline-block">お問い合わせ</a>
+          class="hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 sm:inline-block">お問い合わせ</a>
         <!-- モバイル用メニューボタン -->
         <button id="menu-button" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu"
           class="flex h-9 w-9 items-center justify-center rounded-md border border-line text-ink md:hidden">
@@ -208,7 +208,7 @@
 
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="#projects"
-              class="rounded-md bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition hover:bg-stone-700">制作物を見る</a>
+              class="rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700">制作物を見る</a>
             <a href="#contact"
               class="rounded-md border border-line bg-surface px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-stone-400">お仕事のご相談</a>
           </div>
