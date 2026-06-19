@@ -1,1 +1,11 @@
+# build output
+dist/
+# astro
+.astro/
+# dependencies
+node_modules/
+# vercel
 .vercel
+# misc
+.DS_Store
+*.log

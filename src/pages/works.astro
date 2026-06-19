@@ -1,0 +1,67 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+
+const base = import.meta.env.BASE_URL;
+const personal = projects.filter((p) => p.kind === "個人開発");
+const work = projects.filter((p) => p.kind === "業務");
+
+const writing = [
+  { label: "公開中アプリ", title: "AIO Lens", desc: "生成AIへの引用されやすさを診断する AIO ツール。", href: "https://aio-lens.vercel.app" },
+  { label: "公開中アプリ", title: "Tech Doc Assistant", desc: "GPT-4 × RAG の AIドキュメント管理アプリ。", href: "https://tech-doc-assistant.vercel.app" },
+  { label: "公開中アプリ", title: "AI Research Agent", desc: "計画→検索→合成を自動実行するAIエージェント。", href: "https://sotaro0000-research-agent.vercel.app" },
+  { label: "GitHub", title: "ソースコード公開", desc: "個人開発のコードを README 付きで公開。", href: "https://github.com/sotaro0000" },
+];
+---
+
+<Base active="works" title="Works | 佐藤 颯太郎 ポートフォリオ" description="AIO Lens・Diagram Studio・Tech Doc Assistant・AI Research Agent などの制作物を、課題・アプローチ・成果とともに掲載。">
+  <section>
+    <div class="mx-auto max-w-5xl px-5 pb-8 pt-16 sm:pt-20">
+      <p class="reveal kicker mb-2">Works</p>
+      <h1 class="reveal font-display text-3xl font-bold text-ink sm:text-4xl">制作物・プロジェクト</h1>
+      <p class="reveal mt-3 max-w-2xl text-sm leading-relaxed text-body">
+        各プロジェクトを「課題 → アプローチ → 成果」の流れで記載しています。個人開発はすべて公開中で、実際に触って確認いただけます。
+      </p>
+    </div>
+  </section>
+
+  {/* 個人開発 */}
+  <section>
+    <div class="mx-auto max-w-5xl space-y-8 px-5 pb-8">
+      <p class="reveal kicker">個人開発 — Personal</p>
+      {personal.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </section>
+
+  {/* 業務 */}
+  <section>
+    <div class="mx-auto max-w-5xl space-y-8 px-5 pb-12">
+      <p class="reveal kicker">業務 — Professional</p>
+      {work.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </section>
+
+  {/* 発信 */}
+  <section class="border-t border-line bg-soft">
+    <div class="mx-auto max-w-5xl px-5 py-16">
+      <p class="reveal kicker mb-2">Writing / Output</p>
+      <h2 class="reveal mb-8 font-display text-2xl font-bold text-ink">発信・アウトプット</h2>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {writing.map((w, i) => (
+          <a href={w.href} target="_blank" rel="noopener" class={`reveal card-hover rounded-lg border border-line bg-white p-5 delay-${i % 3}`}>
+            <p class="kicker">{w.label}</p>
+            <p class="mt-2 font-display font-semibold text-ink">{w.title}</p>
+            <p class="mt-1 text-xs text-muted">{w.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line">
+    <div class="mx-auto max-w-5xl px-5 py-12 text-center">
+      <a href={`${base}contact/`} class="inline-block rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">お仕事のご相談はこちら →</a>
+    </div>
+  </section>
+</Base>

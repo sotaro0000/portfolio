@@ -1,0 +1,122 @@
+---
+import Base from "../layouts/Base.astro";
+import { projects } from "../data/projects";
+
+const base = import.meta.env.BASE_URL;
+const personal = projects.filter((p) => p.kind === "個人開発");
+
+const services = [
+  {
+    title: "AIアプリ・RAG 開発",
+    desc: "生成AIを活用したWebアプリや RAG システムを、企画・要件定義から実装・公開まで一気通貫で。",
+    icon: '<path d="M4 7h16M4 12h16M4 17h10" /><circle cx="18" cy="17" r="2.5" />',
+  },
+  {
+    title: "AIエージェント・業務自動化",
+    desc: "市場リサーチや定型業務を、計画→ツール実行→合成を自律で回すエージェントで自動化します。",
+    icon: '<circle cx="12" cy="12" r="3" /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />',
+  },
+  {
+    title: "AIマーケティング（SEO / AIO）",
+    desc: "生成AI時代の検索流入（AIO）・SEO・CV 改善を、データ分析に基づき企画・実装・運用します。",
+    icon: '<path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6" />',
+  },
+];
+---
+
+<Base active="home">
+  {/* ===== Hero ===== */}
+  <section>
+    <div class="mx-auto max-w-5xl px-5 pb-14 pt-20 sm:pt-28">
+      <div class="reveal">
+        <p class="kicker mb-5">AI Engineer × Marketer ／ 個人事業主</p>
+        <h1 class="font-display text-[2.1rem] font-extrabold leading-[1.18] tracking-tight text-ink sm:text-[3.25rem]">
+          AIで「課題発見」から<br class="hidden sm:block" />
+          「実装・成果」まで、<span class="text-brand">一気通貫</span>で。
+        </h1>
+        <p class="mt-6 max-w-2xl text-[15px] leading-relaxed text-body">
+          佐藤 颯太郎（Sotaro&nbsp;Sato）。組み込み・Webシステム開発を起点に、現在は
+          <strong class="font-semibold text-ink">LLM / RAG を活用したアプリケーション開発</strong>と、
+          <strong class="font-semibold text-ink">AIを用いたマーケティング施策（SEO / AIO）</strong>の双方を手がけています。
+          ビジネス課題の要件定義からフルスタック実装、運用・改善までを横断的にリードします。
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={`${base}works/`} class="rounded-md bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark">制作物を見る</a>
+          <a href={`${base}contact/`} class="rounded-md border border-line bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-slate-400">お仕事のご相談</a>
+        </div>
+        <dl class="mt-12 grid max-w-2xl grid-cols-3 gap-6 border-t border-line pt-7">
+          <div><dt class="font-display text-3xl font-extrabold text-ink">4</dt><dd class="mt-1 text-xs leading-relaxed text-muted">個人開発アプリ<br>公開中</dd></div>
+          <div><dt class="font-display text-3xl font-extrabold text-ink">RAG</dt><dd class="mt-1 text-xs leading-relaxed text-muted">本番リリース<br>実績あり</dd></div>
+          <div><dt class="font-display text-3xl font-extrabold text-ink">AI×Mkt</dt><dd class="mt-1 text-xs leading-relaxed text-muted">エンジニアと<br>マーケの両輪</dd></div>
+        </dl>
+      </div>
+      <a href={`${base}about/`} class="mt-12 inline-flex items-center gap-2 text-xs text-muted">
+        <span class="kicker text-muted">More about me</span>
+        <svg class="scroll-cue h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6" /></svg>
+      </a>
+    </div>
+  </section>
+
+  {/* ===== What I do（提供価値）===== */}
+  <section class="border-t border-line bg-soft">
+    <div class="mx-auto max-w-5xl px-5 py-20">
+      <p class="reveal kicker mb-2">What I do</p>
+      <h2 class="reveal mb-10 font-display text-2xl font-bold text-ink">提供できること</h2>
+      <div class="grid gap-5 md:grid-cols-3">
+        {services.map((s, i) => (
+          <div class={`reveal card-hover rounded-lg border border-line bg-white p-6 delay-${i}`}>
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-brand-soft text-brand">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={s.icon} />
+            </div>
+            <h3 class="mb-2 font-display font-bold text-ink">{s.title}</h3>
+            <p class="text-sm leading-relaxed text-body">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ===== Selected Works ===== */}
+  <section class="border-t border-line">
+    <div class="mx-auto max-w-5xl px-5 py-20">
+      <div class="reveal mb-10 flex items-end justify-between gap-4">
+        <div>
+          <p class="kicker mb-2">Selected Works</p>
+          <h2 class="font-display text-2xl font-bold text-ink">公開中の個人開発アプリ</h2>
+        </div>
+        <a href={`${base}works/`} class="hidden whitespace-nowrap text-sm font-semibold text-brand underline-offset-4 hover:underline sm:inline">すべての制作物を見る →</a>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        {personal.map((p, i) => (
+          <a href={p.demoUrl} target="_blank" rel="noopener" class={`reveal card-hover block rounded-lg border border-line bg-white p-6 delay-${i % 3}`}>
+            <div class="mb-3 flex flex-wrap items-center gap-2">
+              <span class="rounded bg-brand-soft px-2 py-0.5 font-mono text-[11px] text-brand">{p.badges[0]}</span>
+              <span class="rounded bg-soft px-2 py-0.5 font-mono text-[11px] text-muted">公開中</span>
+            </div>
+            <h3 class="font-display text-lg font-bold text-ink">{p.title}</h3>
+            <p class="mt-1 text-sm text-muted">{p.subtitle}</p>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              {p.stack.slice(0, 4).map((s) => <span class="rounded bg-soft px-2 py-1 font-mono text-[11px] text-body">{s}</span>)}
+            </div>
+            <span class="mt-4 inline-block text-sm font-semibold text-brand">開く ↗</span>
+          </a>
+        ))}
+      </div>
+      <a href={`${base}works/`} class="mt-8 inline-block text-sm font-semibold text-brand underline-offset-4 hover:underline sm:hidden">すべての制作物を見る →</a>
+    </div>
+  </section>
+
+  {/* ===== CTA ===== */}
+  <section class="border-t border-line bg-ink text-white">
+    <div class="mx-auto max-w-5xl px-5 py-20 text-center">
+      <span class="reveal mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>現在、業務委託のご相談を受付中です
+      </span>
+      <h2 class="reveal mb-4 font-display text-3xl font-bold">一緒に、AIで成果をつくりませんか？</h2>
+      <p class="reveal mx-auto mb-8 max-w-xl text-sm leading-relaxed text-slate-300">
+        AI を活用したアプリ開発・PoC、RAG システム構築、AIマーケティング施策など、お気軽にご相談ください。
+      </p>
+      <a href={`${base}contact/`} class="reveal inline-block rounded-md bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:bg-slate-100">お問い合わせへ →</a>
+    </div>
+  </section>
+</Base>
