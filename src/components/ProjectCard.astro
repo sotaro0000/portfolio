@@ -3,7 +3,8 @@ import type { Project } from "../data/projects";
 interface Props { project: Project; }
 const { project: p } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const img = p.image ? `${base}${p.image}` : null;
+// ?v= はキャッシュ無効化用（画像更新時にバージョンを上げる）
+const img = p.image ? `${base}${p.image}?v=3` : null;
 ---
 
 {/* ===== Featured（主役）===== */}
