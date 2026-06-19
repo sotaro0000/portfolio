@@ -484,7 +484,63 @@
         </div>
       </article>
 
-      <!-- Project 3: 社内RAG（業務・チーム開発） -->
+      <!-- Project 3: AI Research Agent（個人開発・AIエージェント） -->
+      <article class="reveal mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">個人開発</span>
+          <span class="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700">AIエージェント</span>
+          <span class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">公開中</span>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900">AI Research Agent — 自律型リサーチエージェント</h4>
+        <p class="mt-1 text-sm text-slate-500">キーワードから競合・市場レポートを自動生成するAIエージェント</p>
+
+        <!-- スクリーンショット（ブラウザ風モックアップ） -->
+        <div class="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+          <div class="browser-bar flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-2.5">
+            <span class="ml-auto rounded bg-white px-3 py-0.5 text-[10px] text-slate-400">ai-research-agent</span>
+          </div>
+          <img src="ai-research-agent.png" alt="AI Research Agent の実行画面（エージェントの調査ステップ可視化）"
+            class="block w-full"
+            onerror="this.closest('div').parentNode.removeChild(this.closest('div'));" />
+        </div>
+
+        <div class="mt-5 grid gap-6 md:grid-cols-2">
+          <div class="space-y-3 text-sm leading-relaxed">
+            <p><span class="font-semibold text-red-600">課題：</span><span class="text-slate-600">市場・競合リサーチは「検索→精読→要約→構造化」に多くの工数がかかる定型作業。これを自動化したい。</span></p>
+            <p><span class="font-semibold text-amber-600">アプローチ：</span><span class="text-slate-600">AIエージェントが <strong>「調査計画 → Web検索 → レポート合成」を自律実行</strong>。実行ステップを可視化し、LLM(OpenAI/Anthropic)・検索(Tavily/Serper)をプロバイダ非依存で抽象化。APIキーの有無で3段階に縮退する堅牢設計（demo / 知識ベース / 実検索＋出典付き）。</span></p>
+            <p><span class="font-semibold text-green-600">成果：</span><span class="text-slate-600">企画〜実装〜公開まで個人で一貫。<strong>“計画・ツール実行・合成”のエージェント設計</strong>を実装し、競合比較・SWOT・推奨アクションを出典付きで自動生成。</span></p>
+            <p class="text-xs text-slate-400">役割：企画・設計・実装・公開（個人）／ デプロイ：Vercel</p>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase text-slate-400">主な機能</p>
+              <ul class="space-y-1 text-xs text-slate-600">
+                <li>・調査計画の自動立案（サブクエリ分解）</li>
+                <li>・複数クエリでのWeb検索（ツール実行）</li>
+                <li>・競合比較表 / 市場トレンド / SWOT</li>
+                <li>・推奨アクション＋出典付きレポート</li>
+                <li>・エージェント実行ステップの可視化</li>
+              </ul>
+            </div>
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase text-slate-400">Tech Stack</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Next.js 16</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">TypeScript</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">React 19</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Tailwind CSS</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">OpenAI / Anthropic</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Tavily / Serper</span>
+                <span class="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">Vercel</span>
+              </div>
+            </div>
+            <a href="https://sotaro0000-research-agent.vercel.app" target="_blank" rel="noopener"
+              class="inline-block text-sm font-semibold text-brand-600 hover:underline">サイトを開く ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: 社内RAG（業務・チーム開発） -->
       <article class="reveal mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
         <div class="mb-4 flex flex-wrap items-center gap-2">
           <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">チーム開発（PL）</span>
@@ -519,7 +575,7 @@
         </div>
       </article>
 
-      <!-- Project 4: 業務（AI/マーケ） -->
+      <!-- Project 5: 業務（AI/マーケ） -->
       <article class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lift">
         <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">業務（AI / マーケ）</span>
         <h4 class="mt-2 text-lg font-bold text-slate-900">設計書→打鍵表のAI自動化 ＆ AIマーケ施策</h4>
@@ -543,23 +599,29 @@
       <h2 class="reveal mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600">Writing</h2>
       <h3 class="reveal mb-2 text-2xl font-bold text-slate-900">発信・アウトプット</h3>
       <p class="reveal mb-8 text-sm text-slate-500">学んだ技術や作った成果物を、技術記事として発信し知見を定着させています。</p>
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <a href="https://aio-lens.vercel.app" target="_blank" rel="noopener"
           class="reveal rounded-xl border border-slate-200 p-5 lift">
           <p class="text-xs font-semibold text-brand-600">公開中アプリ</p>
           <p class="mt-1 font-semibold text-slate-800">AIO Lens</p>
-          <p class="mt-1 text-xs text-slate-500">生成AIへの引用されやすさを診断する AIO ツール。本番公開中。</p>
+          <p class="mt-1 text-xs text-slate-500">生成AIへの引用されやすさを診断する AIO ツール。</p>
         </a>
         <a href="https://tech-doc-assistant.vercel.app" target="_blank" rel="noopener"
           class="reveal delay-100 rounded-xl border border-slate-200 p-5 lift">
           <p class="text-xs font-semibold text-brand-600">公開中アプリ</p>
           <p class="mt-1 font-semibold text-slate-800">Tech Doc Assistant</p>
-          <p class="mt-1 text-xs text-slate-500">GPT-4 × RAG の AIドキュメント管理アプリ。本番公開中。</p>
+          <p class="mt-1 text-xs text-slate-500">GPT-4 × RAG の AIドキュメント管理アプリ。</p>
         </a>
-        <a href="#" data-link="repo" class="reveal delay-200 rounded-xl border border-slate-200 p-5 lift">
+        <a href="https://sotaro0000-research-agent.vercel.app" target="_blank" rel="noopener"
+          class="reveal delay-200 rounded-xl border border-slate-200 p-5 lift">
+          <p class="text-xs font-semibold text-brand-600">公開中アプリ</p>
+          <p class="mt-1 font-semibold text-slate-800">AI Research Agent</p>
+          <p class="mt-1 text-xs text-slate-500">計画→検索→合成を自動実行するAIエージェント。</p>
+        </a>
+        <a href="#" data-link="repo" class="reveal delay-300 rounded-xl border border-slate-200 p-5 lift">
           <p class="text-xs font-semibold text-brand-600">GitHub</p>
           <p class="mt-1 font-semibold text-slate-800">ソースコード公開</p>
-          <p class="mt-1 text-xs text-slate-500">AIO Lens など個人開発のコードを README 付きで公開。</p>
+          <p class="mt-1 text-xs text-slate-500">個人開発のコードを README 付きで公開。</p>
         </a>
       </div>
     </div>
