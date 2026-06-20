@@ -1,40 +1,101 @@
 ---
 import Base from "../layouts/Base.astro";
+
+const steps = [
+  { n: "01", t: "お問い合わせ", d: "下のフォーム、またはメールで概要をお送りください（匿名・相談だけでもOK）。" },
+  { n: "02", t: "ヒアリング・お見積り", d: "目的・要件・ご予算を伺い、進め方とお見積りをご提案します（通常2営業日以内に返信）。" },
+  { n: "03", t: "開発・納品・運用", d: "PoC から実装・公開・改善まで。AI駆動開発で素早く形にし、成果につなげます。" },
+];
 ---
 
 <Base active="contact" title="Contact | 佐藤 颯太郎 ポートフォリオ" description="AIを活用したアプリ開発・RAG構築・AIマーケティングのご相談。業務委託を受付中です。">
-  <section class="border-b border-line">
-    <div class="mx-auto max-w-3xl px-5 py-24 text-center">
+  <section>
+    <div class="mx-auto max-w-5xl px-5 pb-8 pt-16 text-center sm:pt-20">
       <span class="reveal mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
-        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>現在、業務委託のご相談を受付中です
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>現在、業務委託のご相談を受付中（稼働 週2〜3日 / リモート可）
       </span>
       <p class="reveal kicker mb-2">Contact</p>
       <h1 class="reveal mb-4 font-display text-3xl font-bold text-ink sm:text-4xl">一緒に、AIで成果をつくりませんか？</h1>
-      <p class="reveal mx-auto mb-10 max-w-xl text-sm leading-relaxed text-body">
+      <p class="reveal mx-auto max-w-xl text-sm leading-relaxed text-body">
         AI を活用したアプリ開発・PoC、RAG システム構築、AIエージェント、AIマーケティング施策（SEO / AIO）など、
-        お仕事のご相談を承っています。まずはお気軽にメッセージください。
+        お気軽にご相談ください。
       </p>
+    </div>
+  </section>
 
-      <div class="reveal mx-auto max-w-md space-y-3 text-left">
-        <a href="mailto:sotaro.gt@gmail.com" class="card-hover flex items-center gap-4 rounded-lg border border-line bg-white p-5">
-          <span class="flex h-11 w-11 flex-none items-center justify-center rounded-md bg-brand-soft text-brand">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
-          </span>
-          <span>
-            <span class="block font-mono text-[11px] uppercase tracking-wider text-muted">Email</span>
-            <span class="font-display font-semibold text-ink">sotaro.gt@gmail.com</span>
-          </span>
-        </a>
-        <a href="https://github.com/sotaro0000" target="_blank" rel="noopener" class="card-hover flex items-center gap-4 rounded-lg border border-line bg-white p-5">
-          <span class="flex h-11 w-11 flex-none items-center justify-center rounded-md bg-soft text-ink">
-            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z" /></svg>
-          </span>
-          <span>
-            <span class="block font-mono text-[11px] uppercase tracking-wider text-muted">GitHub</span>
-            <span class="font-display font-semibold text-ink">github.com/sotaro0000</span>
-          </span>
-        </a>
+  <section class="pb-20">
+    <div class="mx-auto grid max-w-5xl gap-10 px-5 lg:grid-cols-2">
+      {/* 左：フォーム */}
+      <div class="reveal rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+        <h2 class="font-display text-lg font-bold text-ink">お問い合わせフォーム</h2>
+        <p class="mt-1 text-xs text-muted">送信すると、入力内容を下書きしたメールが開きます。</p>
+        <form id="contact-form" class="mt-6 space-y-4">
+          <div>
+            <label for="cf-name" class="mb-1 block text-xs font-medium text-body">お名前 / 会社名</label>
+            <input id="cf-name" name="name" type="text" required class="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand-soft" />
+          </div>
+          <div>
+            <label for="cf-email" class="mb-1 block text-xs font-medium text-body">メールアドレス</label>
+            <input id="cf-email" name="email" type="email" required class="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand-soft" />
+          </div>
+          <div>
+            <label for="cf-budget" class="mb-1 block text-xs font-medium text-body">ご相談の種類</label>
+            <select id="cf-budget" name="budget" class="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand-soft">
+              <option>AIアプリ・RAG 開発</option>
+              <option>AIエージェント・業務自動化</option>
+              <option>AIマーケティング（SEO / AIO）</option>
+              <option>その他・まずは相談</option>
+            </select>
+          </div>
+          <div>
+            <label for="cf-msg" class="mb-1 block text-xs font-medium text-body">ご相談内容</label>
+            <textarea id="cf-msg" name="message" rows="5" required class="w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand-soft"></textarea>
+          </div>
+          <button type="submit" class="w-full rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-dark">メールを作成して送信</button>
+          <p class="text-center text-[11px] text-muted">うまく開かない場合は <a href="mailto:sotaro.gt@gmail.com" class="text-brand underline">sotaro.gt@gmail.com</a> まで直接どうぞ。</p>
+        </form>
+      </div>
+
+      {/* 右：相談の流れ + 直接連絡 */}
+      <div class="space-y-6">
+        <div class="reveal delay-1">
+          <p class="kicker mb-3">ご相談の流れ</p>
+          <ol class="space-y-3">
+            {steps.map((s) => (
+              <li class="flex gap-4 rounded-xl border border-line bg-white p-4 shadow-sm">
+                <span class="font-display text-base font-bold text-brand">{s.n}</span>
+                <div>
+                  <p class="text-sm font-semibold text-ink">{s.t}</p>
+                  <p class="mt-0.5 text-xs leading-relaxed text-muted">{s.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div class="reveal delay-2 flex flex-wrap gap-3">
+          <a href="mailto:sotaro.gt@gmail.com" class="card-hover inline-flex items-center gap-2 rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink">
+            <svg class="h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
+            sotaro.gt@gmail.com
+          </a>
+          <a href="https://github.com/sotaro0000" target="_blank" rel="noopener" class="card-hover inline-flex items-center gap-2 rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink">GitHub ↗</a>
+        </div>
       </div>
     </div>
   </section>
+
+  <script>
+    // 静的サイト用：フォーム内容から下書きメールを作成して開く（バックエンド不要）
+    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = String(data.get("name") || "");
+      const email = String(data.get("email") || "");
+      const budget = String(data.get("budget") || "");
+      const message = String(data.get("message") || "");
+      const subject = `【お問い合わせ】${budget} — ${name}様`;
+      const body = `お名前/会社名: ${name}\nメール: ${email}\nご相談の種類: ${budget}\n\n${message}`;
+      window.location.href = `mailto:sotaro.gt@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
 </Base>

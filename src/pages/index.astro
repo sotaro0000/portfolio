@@ -52,18 +52,19 @@ const services = [
         </dl>
         </div>
 
-        {/* 右：制作物プレビュー */}
-        <div class="reveal delay-1 relative">
-          <div class="overflow-hidden rounded-2xl border border-line bg-white shadow-xl">
-            <div class="flex items-center gap-1.5 border-b border-line bg-soft px-4 py-2.5">
-              <span class="h-2.5 w-2.5 rounded-full bg-slate-300"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-slate-300"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-slate-300"></span>
-              <span class="ml-auto font-mono text-[10px] text-muted">aio-lens.vercel.app</span>
-            </div>
-            <img src={`${base}aio-lens-summary.png?v=3`} alt="制作物の一例：AIO Lens の画面" class="block w-full" />
+        {/* 右：制作物プレビュー（4本の幅を見せる） */}
+        <div class="reveal delay-1">
+          <div class="grid grid-cols-2 gap-3">
+            {personal.map((p) => (
+              <a href={`${base}works/${p.slug}/`} class="card-hover overflow-hidden rounded-xl border border-line bg-white shadow-sm">
+                <div class="overflow-hidden border-b border-line bg-soft">
+                  <img src={`${base}${p.image}?v=3`} alt={`${p.title} の画面`} class="block aspect-[16/10] w-full object-cover object-top" loading="lazy" />
+                </div>
+                <p class="truncate px-3 py-2 font-display text-xs font-bold text-ink">{p.title.split(" —")[0].split("（")[0]}</p>
+              </a>
+            ))}
           </div>
-          <span class="absolute -right-3 -top-3 rounded-full bg-brand px-3 py-1 text-[11px] font-semibold text-white shadow-lg">公開中アプリ</span>
+          <p class="mt-3 text-center font-mono text-[11px] text-muted">個人開発アプリ 4本 — すべて公開中</p>
         </div>
       </div>
 
@@ -105,7 +106,7 @@ const services = [
       </div>
       <div class="grid gap-5 sm:grid-cols-2">
         {personal.map((p, i) => (
-          <a href={p.demoUrl} target="_blank" rel="noopener" class={`reveal card-hover block rounded-lg border border-line bg-white p-6 delay-${i % 3}`}>
+          <a href={`${base}works/${p.slug}/`} class={`reveal card-hover block rounded-lg border border-line bg-white p-6 delay-${i % 3}`}>
             <div class="mb-3 flex flex-wrap items-center gap-2">
               <span class="rounded bg-brand-soft px-2 py-0.5 font-mono text-[11px] text-brand">{p.badges[0]}</span>
               <span class="rounded bg-soft px-2 py-0.5 font-mono text-[11px] text-muted">公開中</span>
@@ -115,7 +116,7 @@ const services = [
             <div class="mt-3 flex flex-wrap gap-1.5">
               {p.stack.slice(0, 4).map((s) => <span class="rounded bg-soft px-2 py-1 font-mono text-[11px] text-body">{s}</span>)}
             </div>
-            <span class="mt-4 inline-block text-sm font-semibold text-brand">開く ↗</span>
+            <span class="mt-4 inline-block text-sm font-semibold text-brand">詳細を見る →</span>
           </a>
         ))}
       </div>
