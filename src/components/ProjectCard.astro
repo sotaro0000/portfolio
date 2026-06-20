@@ -4,7 +4,7 @@ interface Props { project: Project; }
 const { project: p } = Astro.props;
 const base = import.meta.env.BASE_URL;
 // ?v= はキャッシュ無効化用（画像更新時にバージョンを上げる）
-const img = p.image ? `${base}${p.image}?v=3` : null;
+const img = p.image ? `${base}${p.image}?v=4` : null;
 ---
 
 {/* ===== Featured（主役）===== */}
